@@ -1,4 +1,5 @@
 import css from "./ContactForm.module.css"
+import PropTypes from "prop-types"; 
 const ContactForm = ({handleSubmit, nameInputId, handleChange, handleChangeNumber} ) => {
 return (
 <form className= {css.form} onSubmit={handleSubmit}> 
@@ -23,5 +24,11 @@ return (
 <button className={css.add} type="submit">Add contact</button>
      </form>
    )
+}
+ContactForm.propTypes = {
+  handleSubmit:PropTypes.func.isRequired,
+  nameInputId:PropTypes.string.isRequired,
+  handleChange:PropTypes.func.isRequired,
+  handleChangeNumber:PropTypes.func.isRequired
 }
      export default ContactForm;
